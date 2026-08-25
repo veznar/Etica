@@ -1,95 +1,87 @@
 import {
   ArrowGlyph,
-  Asterisk,
   CheckSq,
-  Crosshair,
+  Converge,
   Kicker,
   Marquee,
-  PlusGlyph,
+  RaysMotif,
   Reveal,
-  Ring,
   SlideTitle,
+  Stripes,
   type SlideDef,
 } from "../components/kit";
 
 /* ================= 01 · ТИТУЛ ================= */
 
 function S01() {
+  const badges = ["Альянс в сфере ИИ", "Кодекс этики в сфере ИИ", "РГ «Этика ИИ в медиа»"];
   return (
-    <div className="grid-ink relative h-full overflow-hidden bg-ink text-paper">
-      <div className="pointer-events-none absolute -right-28 top-[-20%] h-[150%] w-32 rotate-[14deg] bg-signal md:w-40" />
-      <div className="pointer-events-none absolute -right-10 top-[-20%] h-[150%] w-1.5 rotate-[14deg] bg-paper/40" />
-      <Asterisk className="spin-slow pointer-events-none absolute right-[11%] top-[13%] h-24 w-24 text-signal md:h-36 md:w-36" />
-      <Ring className="drift-a pointer-events-none absolute -left-10 bottom-24 h-40 w-40 text-paper/20" />
-      <div className="pointer-events-none absolute bottom-28 left-[46%] hidden h-14 w-14 border border-paper/25 lg:block" aria-hidden>
-        <span className="absolute left-1/2 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 bg-signal" />
-      </div>
+    <div className="grid-white relative h-full overflow-hidden bg-brand text-white">
+      <RaysMotif className="pointer-events-none absolute -bottom-2 -left-2 h-[135%] w-auto text-white/12" />
+      <Stripes className="drift-a pointer-events-none absolute -right-10 -top-16 h-64 w-64 rotate-12 text-sky/35" />
 
-      <div className="relative flex h-full flex-col px-6 py-6 md:px-14 lg:px-20">
+      <div className="relative flex h-full flex-col px-6 py-8 md:px-14 lg:px-20">
         <Reveal>
-          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-paper/15 pb-4">
-            <Kicker>Форум современной журналистики «Вся Россия»</Kicker>
-            <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-fog">
-              2026 · сессия «технологии и общество»
-            </p>
-          </div>
+          <Kicker className="text-white/70">Форум современной журналистики · вся россия — 2026</Kicker>
         </Reveal>
 
-        <div className="flex min-h-0 flex-1 flex-col justify-center gap-8 py-6 lg:flex-row lg:items-end lg:justify-between">
+        <div className="flex min-h-0 flex-1 flex-col justify-center gap-8 lg:flex-row lg:items-end lg:justify-between lg:gap-10">
           <div className="max-w-4xl">
-            <Reveal delay={120}>
-              <p className="mb-5 font-mono text-[11px] uppercase tracking-[0.32em] text-signal md:text-xs">
-                {"//"} рабочая группа «Этика ИИ в медиа»
-              </p>
-            </Reveal>
-            <Reveal delay={220}>
-              <h1 className="font-display text-[clamp(1.7rem,4.6vw,3.9rem)] font-extrabold uppercase leading-[1.05] tracking-tight">
-                Этика ИИ в медиа:
-                <span className="mt-2 block">
-                  грань между{" "}
-                  <span className="relative inline-block">
-                    риском
-                    <span className="absolute -bottom-1 left-0 h-[0.13em] w-full bg-signal" />
-                  </span>{" "}
-                  и прогрессом
-                </span>
+            <Reveal delay={150}>
+              <h1 className="font-display text-[clamp(2.1rem,6.6vw,5.2rem)] font-black uppercase leading-[1.02] tracking-tight">
+                Этика ИИ
+                <br />в медиа
               </h1>
             </Reveal>
-            <Reveal delay={380}>
-              <div className="mt-8 max-w-xl border-l-4 border-signal pl-5">
-                <p className="text-[15px] font-semibold leading-snug">
-                  Центр искусственного интеллекта ННГУ им.&nbsp;Н.И.&nbsp;Лобачевского
-                </p>
-                <p className="mt-1.5 font-mono text-[11px] leading-relaxed tracking-wide text-fog">
-                  Комиссия по реализации Кодекса этики в сфере ИИ
-                  <br />
-                  руководитель рабочей группы «Этика ИИ в медиа»
-                </p>
-              </div>
+            <Reveal delay={300}>
+              <p className="mt-4 flex items-center gap-4">
+                <span className="h-[3px] w-12 shrink-0 bg-sky" aria-hidden />
+                <span className="font-display text-[clamp(1rem,2.6vw,1.9rem)] font-bold uppercase leading-tight text-tint2">
+                  грань между риском и прогрессом
+                </span>
+              </p>
+            </Reveal>
+            <Reveal delay={430}>
+              <Converge className="mt-8 h-12 w-full max-w-xl text-white/25" />
             </Reveal>
           </div>
 
-          <Reveal delay={520} className="hidden shrink-0 lg:block">
-            <p className="writing-vertical font-mono text-[11px] uppercase tracking-[0.5em] text-fog">
-              вся россия — 2026 · презентация
-            </p>
+          <Reveal delay={560} className="shrink-0">
+            <div className="border-l-4 border-sky bg-deep/60 px-6 py-5 lg:px-8">
+              <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-sky">докладчик</p>
+              <p className="mt-2 font-display text-lg font-extrabold uppercase leading-tight lg:text-xl">
+                Руководитель проектов Центра ИИ ННГУ
+              </p>
+              <p className="mt-1 text-sm leading-snug text-white/75">
+                член Комиссии по реализации Кодекса этики в сфере ИИ, руководитель рабочей группы
+                «Этика ИИ в медиа»
+              </p>
+            </div>
+            <div className="mt-4 flex flex-wrap gap-2 lg:justify-end">
+              {badges.map((b) => (
+                <span
+                  key={b}
+                  className="border border-white/35 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-white/85 transition-colors duration-300 hover:border-sky hover:text-white"
+                >
+                  {b}
+                </span>
+              ))}
+            </div>
           </Reveal>
         </div>
 
-        <Reveal delay={620}>
-          <Marquee
-            items={[
-              "верификация",
-              "маркировка",
-              "ответственность",
-              "доверие",
-              "прозрачность",
-              "фактчекинг",
-              "авторское право",
-              "аудитория",
-            ]}
-            className="border-t border-paper/15 pt-4 text-fog"
-          />
+        <Reveal delay={700}>
+          <div className="border-t border-white/20 pt-3">
+            <Marquee
+              items={[
+                "кодекс этики в сфере ИИ",
+                "рабочая группа «этика ИИ в медиа»",
+                "приглашаем редакции и платформы",
+                "вся россия — 2026",
+              ]}
+              className="text-white/55"
+            />
+          </div>
         </Reveal>
       </div>
     </div>
@@ -101,171 +93,172 @@ function S01() {
 function S02() {
   const stats = [
     {
-      n: "≈80%",
-      t: "крупных редакций уже используют ИИ в рутине: транскрибация, саммари, заголовки, дистрибуция",
-      s: "оценки отраслевых исследований, 2025–2026",
+      big: "70%",
+      small: "аудитории",
+      text: "уже встречали ИИ-контент в ленте — и далеко не всегда распознавали его",
     },
     {
-      n: "×5",
-      t: "рост объёма синтетического контента в новостных лентах за три года — текст, изображения, видео, голос",
-      s: "генеративные модели стали массовым инструментом",
+      big: "×10",
+      small: "за три года",
+      text: "выросло число публикаций, созданных или отредактированных нейросетями",
     },
     {
-      n: "<50%",
-      t: "читателей уверенно отличают текст нейросети от авторского в слепых тестах",
-      s: "эксперименты с распознаванием ИИ-контента",
+      big: "0",
+      small: "отраслевых правил",
+      text: "единого кодекса практики для медиа в России пока не существует",
     },
   ];
   return (
-    <div className="grid-light relative h-full overflow-hidden bg-paper text-ink">
-      <Crosshair className="drift-b pointer-events-none absolute -bottom-8 -right-8 h-44 w-44 text-ink/15" />
+    <div className="grid-paper relative h-full overflow-hidden bg-white text-inkc">
+      <Stripes className="drift-b pointer-events-none absolute -right-16 bottom-0 h-56 w-56 -rotate-12 text-tint2" />
       <div className="relative flex h-full flex-col gap-6 px-6 py-8 md:gap-8 md:px-14 lg:px-20">
         <Reveal>
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <Kicker className="text-fog">02 · контекст</Kicker>
-              <SlideTitle className="mt-3">
-                Почему этот разговор — <span className="text-signal">сейчас</span>
-              </SlideTitle>
-            </div>
-            <p className="max-w-xs font-mono text-[11px] uppercase leading-relaxed tracking-[0.18em] text-fog">
-              ИИ в редакциях — уже не прогноз, а производственный процесс
-            </p>
-          </div>
+          <Kicker className="text-brand">02 · контекст</Kicker>
+          <SlideTitle className="mt-3">
+            Почему <span className="text-brand">сейчас</span>, а не потом
+          </SlideTitle>
         </Reveal>
 
-        <Reveal delay={150}>
-          <div className="grid divide-y-2 divide-ink border-y-2 border-ink md:grid-cols-3 md:divide-x-2 md:divide-y-0">
-            {stats.map((st) => (
-              <div key={st.n} className="group px-1 py-5 transition-colors md:px-6 md:py-7">
-                <p className="font-display text-[clamp(2.4rem,5.5vw,4.6rem)] font-extrabold leading-none text-signal transition-transform duration-300 group-hover:-translate-y-1">
-                  {st.n}
-                </p>
-                <p className="mt-4 text-sm font-medium leading-snug">{st.t}</p>
-                <p className="mt-3 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.16em] text-fog">
-                  <span className="h-1.5 w-1.5 bg-signal" aria-hidden />
-                  {st.s}
-                </p>
-              </div>
-            ))}
-          </div>
-        </Reveal>
-
-        <div className="mt-auto">
-          <Reveal delay={320}>
-            <div className="group flex items-center gap-6 bg-ink px-6 py-6 text-paper transition-colors duration-300 hover:bg-signal2 md:px-10">
-              <Asterisk className="h-8 w-8 shrink-0 text-signal transition-colors group-hover:text-paper" />
-              <p className="font-display text-[clamp(1rem,2.1vw,1.55rem)] font-bold uppercase leading-snug">
-                Вопрос уже не «придёт ли ИИ в редакции».
-                <span className="block text-signal transition-colors group-hover:text-paper">
-                  Вопрос — «по каким правилам».
-                </span>
-              </p>
-            </div>
-          </Reveal>
-          <Reveal delay={420}>
-            <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.16em] text-fog">
-              * цифры — ориентиры по открытым отраслевым отчётам; точные источники — в заметках спикера
-            </p>
-          </Reveal>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-/* ================= 03 · КТО МЫ И КОГО ЗОВЁМ ================= */
-
-function S03() {
-  const orgs = [
-    {
-      tag: "ННГУ",
-      name: "Центр искусственного интеллекта",
-      desc: "проектный офис университета: модели, данные, прикладные ИИ-решения для медиа и образования",
-    },
-    {
-      tag: "АЛЬЯНС",
-      name: "Альянс в сфере искусственного интеллекта",
-      desc: "инициатор национального Кодекса этики ИИ; объединяет бизнес, университеты и институты развития",
-    },
-    {
-      tag: "КОМИССИЯ",
-      name: "Комиссия по реализации Кодекса этики",
-      desc: "разбор спорных кейсов, рабочие группы, мониторинг практик и доверия аудитории",
-    },
-    {
-      tag: "РГ",
-      name: "Рабочая группа «Этика ИИ в медиа»",
-      desc: "это мы: стандарты применения, маркировка, отраслевой кодекс практики для редакций",
-    },
-  ];
-  const needed = [
-    "Редакторы и журналисты — те, кто ежедневно принимает решения в ньюзруме",
-    "Медиахолдинги и независимые издания — от региональных до федеральных",
-    "Технологические платформы и разработчики ИИ-инструментов",
-    "Юристы: авторское право, персональные данные, распределение ответственности",
-    "Университеты и исследователи — данные, измерения, экспертиза",
-    "Общественные организации и представители аудитории",
-  ];
-  return (
-    <div className="grid-light relative h-full overflow-hidden bg-paper text-ink">
-      <Ring className="drift-a pointer-events-none absolute -right-14 -top-14 h-52 w-52 text-signal/30" />
-      <div className="relative flex h-full flex-col gap-6 px-6 py-8 md:gap-8 md:px-14 lg:px-20">
-        <Reveal>
-          <div>
-            <Kicker className="text-fog">03 · команда и состав</Kicker>
-            <SlideTitle className="mt-3">
-              Кто мы — и кого <span className="text-signal">зовём</span> в рабочую группу
-            </SlideTitle>
-          </div>
-        </Reveal>
-
-        <div className="grid min-h-0 flex-1 gap-8 lg:grid-cols-[1.15fr_1fr] lg:gap-14">
-          <Reveal delay={140}>
-            <div>
-              <p className="mb-1 font-mono text-[10px] uppercase tracking-[0.24em] text-fog">
-                контур проекта
-              </p>
-              {orgs.map((o) => (
+        <div className="grid min-h-0 flex-1 gap-8 lg:grid-cols-[1.4fr_1fr] lg:gap-14">
+          <Reveal delay={150} className="min-h-0">
+            <div className="flex h-full flex-col justify-center border-b-2 border-mist">
+              {stats.map((s, i) => (
                 <div
-                  key={o.tag}
-                  className="group flex items-start gap-4 border-t-2 border-ink py-3.5 transition-all duration-300 hover:translate-x-2 hover:border-signal md:gap-6"
+                  key={s.big}
+                  className="group flex flex-1 items-center gap-5 border-t-2 border-mist py-3 transition-all duration-300 hover:border-brand md:gap-8"
                 >
-                  <span className="mt-0.5 inline-block w-24 shrink-0 bg-ink px-2 py-1 text-center font-mono text-[10px] font-semibold tracking-[0.14em] text-paper transition-colors group-hover:bg-signal">
-                    {o.tag}
-                  </span>
-                  <div>
-                    <p className="font-display text-sm font-bold uppercase leading-tight md:text-[15px]">
-                      {o.name}
+                  <div className="w-36 shrink-0 md:w-48">
+                    <p className="font-display text-[clamp(2rem,4.5vw,3.6rem)] font-black leading-none text-brand transition-transform duration-300 group-hover:-translate-y-0.5">
+                      {s.big}
                     </p>
-                    <p className="mt-1 text-[13px] leading-snug text-ink/70">{o.desc}</p>
+                    <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.24em] text-steel">
+                      {s.small}
+                    </p>
                   </div>
+                  <p className="max-w-md text-sm leading-snug text-inkc/75 md:text-base">{s.text}</p>
+                  <span
+                    className="ml-auto hidden h-1 w-10 shrink-0 bg-sky transition-all duration-300 group-hover:w-20 md:block"
+                    aria-hidden
+                  />
+                  <span className="sr-only">{i}</span>
                 </div>
               ))}
             </div>
           </Reveal>
 
-          <Reveal delay={280}>
-            <div className="flex h-full flex-col border-l-0 border-ink lg:border-l-2 lg:pl-10">
-              <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.24em] text-fog">
-                кого не хватает за столом
-              </p>
-              <ul className="space-y-2.5">
-                {needed.map((n, i) => (
-                  <li key={i} className="flex items-start gap-3 text-[13px] font-medium leading-snug md:text-sm">
-                    <CheckSq className="mt-0.5 h-4 w-4 shrink-0" />
-                    <span>{n}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-auto hidden pt-4 lg:block">
-                <p className="border-l-4 border-signal bg-paper2 px-4 py-3 font-mono text-[11px] uppercase leading-relaxed tracking-[0.12em]">
-                  Кодекс работает, только когда его пишут все стороны процесса — а не одна
+          <Reveal delay={300}>
+            <div className="flex h-full flex-col">
+              <div className="flex-1 border-l-4 border-brand bg-tint p-5 md:p-7">
+                <p className="font-mono text-[10px] uppercase tracking-[0.26em] text-steel">ключевой тезис</p>
+                <p className="mt-3 font-display text-[clamp(1rem,1.9vw,1.35rem)] font-extrabold uppercase leading-snug text-inkc">
+                  Вопрос уже не «применять ИИ или нет» — вопрос, <span className="text-brand">по каким правилам</span>
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-inkc/70">
+                  Технологии обгоняют нормы. Если правила не напишет отрасль — их напишут инциденты,
+                  суды и недоверие аудитории.
+                </p>
+              </div>
+              <div className="mt-4 bg-brand px-5 py-4 text-white">
+                <p className="font-display text-sm font-extrabold uppercase leading-snug md:text-base">
+                  Медиа — самая заметная точка контакта человека с ИИ
                 </p>
               </div>
             </div>
           </Reveal>
         </div>
+
+        <Reveal delay={420}>
+          <p className="border-t-2 border-mist pt-3 font-mono text-[10px] uppercase leading-relaxed tracking-[0.18em] text-steel">
+            оценки носят иллюстративный характер — порядок величин подтверждается отраслевыми
+            исследованиями 2024–2025
+          </p>
+        </Reveal>
+      </div>
+    </div>
+  );
+}
+
+/* ================= 03 · КОМАНДА ЗАДАЧИ ================= */
+
+function S03() {
+  const chain = [
+    { t: "Центр ИИ ННГУ", d: "инициатор и научная база" },
+    { t: "Альянс в сфере ИИ", d: "экосистема 300+ организаций" },
+    { t: "Комиссия по этике", d: "реализация Кодекса" },
+    { t: "РГ «Этика ИИ в медиа»", d: "вы сейчас здесь" },
+  ];
+  const seats = [
+    "Главные редакторы и журналисты",
+    "Медиахолдинги и независимые издания",
+    "ИИ-платформы и разработчики",
+    "Юристы и эксперты по авторскому праву",
+    "Университеты и исследователи",
+    "Представители аудитории — читатель тоже сторона",
+  ];
+  return (
+    <div className="grid-paper relative h-full overflow-hidden bg-white text-inkc">
+      <div className="relative flex h-full flex-col gap-6 px-6 py-8 md:gap-8 md:px-14 lg:px-20">
+        <Reveal>
+          <Kicker className="text-brand">03 · команда задачи</Kicker>
+          <SlideTitle className="mt-3">
+            Кто уже в работе — и <span className="text-brand">кого мы зовём</span>
+          </SlideTitle>
+        </Reveal>
+
+        <div className="grid min-h-0 flex-1 gap-8 lg:grid-cols-[1.25fr_1fr] lg:gap-14">
+          <Reveal delay={150}>
+            <div className="flex flex-col gap-2.5">
+              {chain.map((c, i) => {
+                const last = i === chain.length - 1;
+                return (
+                  <div key={c.t} className="flex items-center gap-3">
+                    <div
+                      className={`flex-1 border px-5 py-3 transition-all duration-300 ${
+                        last
+                          ? "border-brand bg-brand text-white shadow-[6px_6px_0_0_#2196F3] hover:translate-x-1"
+                          : "border-mist bg-white hover:-translate-y-0.5 hover:border-brand"
+                      }`}
+                    >
+                      <p className={`font-display text-sm font-extrabold uppercase md:text-base ${last ? "text-white" : "text-inkc"}`}>
+                        {c.t}
+                      </p>
+                      <p className={`mt-0.5 text-xs ${last ? "text-white/80" : "text-steel"}`}>{c.d}</p>
+                    </div>
+                    {i < chain.length - 1 && (
+                      <ArrowGlyph className="hidden h-3 w-8 shrink-0 rotate-90 text-brand lg:block" />
+                    )}
+                  </div>
+                );
+              })}
+              <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-steel">
+                контур: университет → отрасль → кодекс → рабочая группа
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal delay={300}>
+            <div className="border-l-4 border-sky bg-tint p-5 md:p-6">
+              <p className="font-mono text-[10px] uppercase tracking-[0.26em] text-steel">места в рабочей группе</p>
+              <ul className="mt-3 grid gap-2.5">
+                {seats.map((s) => (
+                  <li
+                    key={s}
+                    className="group flex items-center gap-3 border-b border-mist/80 pb-2.5 text-sm font-medium leading-snug transition-all duration-300 last:border-0 hover:translate-x-1 hover:text-brand"
+                  >
+                    <span className="h-2.5 w-2.5 shrink-0 bg-brand transition-colors group-hover:bg-sky" aria-hidden />
+                    {s}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+        </div>
+
+        <Reveal delay={420}>
+          <p className="border-t-2 border-mist pt-3 font-mono text-[10px] uppercase tracking-[0.18em] text-steel">
+            Рабочая группа открыта: решения принимаются консенсусом участников, а не сверху
+          </p>
+        </Reveal>
       </div>
     </div>
   );
@@ -275,69 +268,46 @@ function S03() {
 
 function S04() {
   const risks = [
-    {
-      n: "01",
-      t: "Дипфейки и синтез",
-      d: "Лица и голоса, которые никогда ничего не говорили. Синтетическое видео дешевле опровержения.",
-    },
-    {
-      n: "02",
-      t: "Галлюцинации моделей",
-      d: "Выдуманные факты с интонацией информагентства — и со скоростью ленты, а не проверки.",
-    },
-    {
-      n: "03",
-      t: "Алгоритмические искажения",
-      d: "Редакционная политика, обученная на чужой картине мира: смещения в выборках и выдаче.",
-    },
-    {
-      n: "04",
-      t: "Непрозрачность",
-      d: "Аудитория не знает, кто с ней говорит — человек или модель. Незнание разрушает доверие.",
-    },
-    {
-      n: "05",
-      t: "Авторское право",
-      d: "Модели обучаются на журналистских текстах без согласия и компенсации редакций и авторов.",
-    },
-    {
-      n: "06",
-      t: "Эрозия профессии",
-      d: "Генератор дешевле репортёра — пока не выясняется, что проверять его дороже всех вместе.",
-    },
+    { n: "01", t: "Дипфейки и синтетические «свидетели»", d: "подделанные видео, голоса и фото ньюсмейкеров разрушают саму основу доверия к новости" },
+    { n: "02", t: "Галлюцинации моделей", d: "правдоподобно сгенерированные факты, цитаты и цифры попадают в публикации без проверки" },
+    { n: "03", t: "Скрытая реклама и манипуляции", d: "агентные ИИ-системы пишут «естественные» отзывы и комментарии, искажая общественное мнение" },
+    { n: "04", t: "Непрозрачный контент", d: "читатель не понимает, где человек, а где машина — и перестаёт верить обоим" },
+    { n: "05", t: "Авторское право и данные", d: "модели обучаются на трудах редакций и авторов — без согласия и компенсации" },
+    { n: "06", t: "Эрозия профессии", d: "сокращение редакций, деградация школы журналистики, утрата редакционного контроля" },
   ];
   return (
-    <div className="grid-ink relative h-full overflow-hidden bg-ink text-paper">
-      <Asterisk className="drift-a pointer-events-none absolute -right-10 top-8 h-36 w-36 text-signal/50" />
+    <div className="grid-white relative h-full overflow-hidden bg-brand text-white">
+      <RaysMotif className="pointer-events-none absolute -right-2 -top-2 h-[110%] w-auto rotate-180 text-white/10" />
       <div className="relative flex h-full flex-col gap-6 px-6 py-8 md:gap-8 md:px-14 lg:px-20">
         <Reveal>
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
-              <Kicker className="text-fog">04 · сторона риска</Kicker>
+              <Kicker className="text-sky">04 · сторона риска</Kicker>
               <SlideTitle className="mt-3">
-                Шесть проблем, которые <span className="text-signal">нельзя пересидеть</span>
+                Шесть точек, где <span className="text-tint2">ломается доверие</span>
               </SlideTitle>
             </div>
-            <p className="max-w-xs font-mono text-[11px] uppercase leading-relaxed tracking-[0.18em] text-fog">
-              каждая уже встречалась в российских и мировых редакциях
+            <p className="max-w-xs font-mono text-[11px] uppercase leading-relaxed tracking-[0.18em] text-white/60">
+              то, что комиссия видит в обращениях редакций и аудитории
             </p>
           </div>
         </Reveal>
 
         <Reveal delay={150} className="min-h-0 flex-1">
-          <div className="grid gap-x-12 md:grid-cols-2">
-            {risks.map((r, i) => (
+          <div className="grid content-center gap-x-10 sm:grid-cols-2">
+            {risks.map((r) => (
               <div
                 key={r.n}
-                className="group -mx-3 flex gap-4 border-t-2 border-paper/15 px-3 py-4 transition-all duration-300 hover:translate-x-2 hover:border-signal hover:bg-paper/5 md:gap-6"
-                style={{ transitionDelay: `${i * 20}ms` }}
+                className="group flex items-start gap-4 border-t border-white/20 py-3.5 transition-all duration-300 hover:translate-x-1.5 hover:bg-white/5"
               >
-                <span className="pt-1 font-mono text-sm font-semibold text-signal">{r.n}</span>
+                <span className="font-display text-2xl font-black leading-none text-white/25 transition-colors duration-300 group-hover:text-sky md:text-3xl">
+                  {r.n}
+                </span>
                 <div>
-                  <h3 className="font-display text-[15px] font-bold uppercase leading-tight md:text-base">
+                  <h3 className="font-display text-sm font-extrabold uppercase leading-tight md:text-[15px]">
                     {r.t}
                   </h3>
-                  <p className="mt-1.5 text-[13px] leading-snug text-fog transition-colors group-hover:text-paper/85 md:text-sm">
+                  <p className="mt-1 text-xs leading-snug text-white/65 transition-colors group-hover:text-white/90 md:text-[13px]">
                     {r.d}
                   </p>
                 </div>
@@ -346,10 +316,9 @@ function S04() {
           </div>
         </Reveal>
 
-        <Reveal delay={320}>
-          <p className="border-t-2 border-paper/15 pt-4 font-mono text-[11px] uppercase leading-relaxed tracking-[0.18em] text-fog">
-            Вывод комиссии: <span className="text-signal">риски системные</span> — значит, и ответ
-            должен быть системным, а не набором запретов
+        <Reveal delay={330}>
+          <p className="border-t border-white/20 pt-4 font-mono text-[11px] uppercase tracking-[0.18em] text-sky">
+            Ни один пункт — не повод останавливать прогресс. Каждый — повод договориться о правилах
           </p>
         </Reveal>
       </div>
@@ -360,74 +329,59 @@ function S04() {
 /* ================= 05 · СТОРОНА ПРОГРЕССА ================= */
 
 function S05() {
-  const gains = [
-    {
-      t: "Верификация и фактчекинг",
-      d: "проверка источников, дат и цитат со скоростью ленты, а не за сутки",
-    },
-    {
-      t: "Доступность",
-      d: "переводы, субтитры, адаптация материалов для людей с ограниченными возможностями",
-    },
-    {
-      t: "Журналистика данных",
-      d: "сигналы в больших массивах: закупки, реестры, статистика — основа расследований",
-    },
-    {
-      t: "Рутина возвращается репортёру",
-      d: "транскрибация, саммари, оцифровка архивов — время уходит в репортаж, а не в расшифровку",
-    },
-    {
-      t: "Новые форматы",
-      d: "персонализация без манипуляции: читатель получает контекст, а не замкнутый пузырь",
-    },
+  const wins = [
+    { t: "Скорость и масштаб", d: "расшифровки, переводы, первичная обработка массивов данных за минуты" },
+    { t: "Фактчекинг нового уровня", d: "ИИ сверяет цитаты, даты и числа быстрее человека — и находит дипфейки" },
+    { t: "Доступность", d: "субтитры, адаптация текстов, персональные форматы для разных аудиторий" },
+    { t: "Журналистика данных", d: "анализ бюджетов, госзакупок и реестров, который раньше занимал месяцы" },
+    { t: "Освобождение от рутины", d: "редактор возвращается к сути профессии — смыслам, проверке, ответственности" },
   ];
   return (
-    <div className="grid-light relative h-full overflow-hidden bg-paper text-ink">
-      <svg
-        viewBox="0 0 80 120"
-        fill="none"
-        className="drift-b pointer-events-none absolute right-[4%] top-10 h-32 w-20 text-signal/25 md:h-44 md:w-28"
-        aria-hidden
-      >
-        <path d="M40 112V16M12 44l28-30 28 30" stroke="currentColor" strokeWidth="9" />
-      </svg>
+    <div className="grid-paper relative h-full overflow-hidden bg-white text-inkc">
       <div className="relative flex h-full flex-col gap-6 px-6 py-8 md:gap-8 md:px-14 lg:px-20">
         <Reveal>
-          <div>
-            <Kicker className="text-fog">05 · сторона прогресса</Kicker>
-            <SlideTitle className="mt-3">
-              Что ИИ <span className="text-signal">даёт</span> медиа — и это нельзя потерять
-            </SlideTitle>
-          </div>
+          <Kicker className="text-brand">05 · сторона прогресса</Kicker>
+          <SlideTitle className="mt-3">
+            Что ИИ уже <span className="text-brand">даёт редакциям</span>
+          </SlideTitle>
         </Reveal>
 
-        <Reveal delay={150} className="min-h-0 flex-1">
-          <div className="max-w-3xl">
-            {gains.map((g, i) => (
-              <div
-                key={g.t}
-                className="group -mx-3 flex items-start gap-4 border-t-2 border-ink px-3 py-3.5 transition-all duration-300 hover:translate-x-2 md:gap-6"
-                style={{ transitionDelay: `${i * 20}ms` }}
-              >
-                <PlusGlyph className="mt-1 h-4 w-4 shrink-0 text-signal transition-transform duration-300 group-hover:rotate-90" />
-                <p className="text-sm leading-snug md:text-[15px]">
-                  <span className="font-display font-bold uppercase">{g.t}.</span>{" "}
-                  <span className="text-ink/70">{g.d}</span>
-                </p>
-              </div>
-            ))}
-          </div>
-        </Reveal>
+        <div className="grid min-h-0 flex-1 gap-8 lg:grid-cols-[1.35fr_1fr] lg:gap-14">
+          <Reveal delay={150} className="min-h-0">
+            <div className="flex h-full flex-col justify-center border-b-2 border-mist">
+              {wins.map((w, i) => (
+                <div
+                  key={w.t}
+                  className="group flex items-start gap-5 border-t-2 border-mist py-3.5 transition-all duration-300 hover:border-l-4 hover:border-l-sky hover:bg-tint hover:pl-4"
+                >
+                  <span className="pt-1 font-mono text-xs font-semibold tracking-widest text-sky">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <h3 className="font-display text-sm font-extrabold uppercase leading-tight md:text-base">
+                      {w.t}
+                    </h3>
+                    <p className="mt-1 text-[13px] leading-snug text-inkc/65 md:text-sm">{w.d}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Reveal>
 
-        <Reveal delay={330}>
-          <blockquote className="max-w-4xl border-l-4 border-signal pl-5 md:pl-6">
-            <p className="font-display text-[clamp(1rem,2vw,1.45rem)] font-bold uppercase leading-snug">
-              Прогресс — не повод закрывать глаза на риски. Риски — не повод останавливать прогресс.
-              <span className="text-signal"> Грань проводит этика.</span>
-            </p>
-          </blockquote>
-        </Reveal>
+          <Reveal delay={300}>
+            <div className="flex h-full flex-col bg-brand p-6 text-white md:p-8">
+              <p className="font-mono text-[10px] uppercase tracking-[0.26em] text-sky">позиция комиссии</p>
+              <p className="mt-4 font-display text-[clamp(1.1rem,2vw,1.5rem)] font-extrabold uppercase leading-snug">
+                Задача — не запретить, а направить
+              </p>
+              <p className="mt-4 text-sm leading-relaxed text-white/80">
+                Мы не за «ИИ вместо журналиста». Мы за ИИ как инструмент сильного журналиста — с
+                понятными правилами, маркировкой и ответственностью человека за публикацию.
+              </p>
+              <Converge className="mt-auto h-10 w-full pt-4 text-white/25" />
+            </div>
+          </Reveal>
+        </div>
       </div>
     </div>
   );
@@ -437,64 +391,70 @@ function S05() {
 
 function S06() {
   const principles = [
-    { n: "I", t: "Человечность", d: "в центре — человек: его права, безопасность и достоинство" },
-    { n: "II", t: "Безопасность", d: "предотвращение вреда людям и обществу на всех этапах жизненного цикла" },
-    { n: "III", t: "Прозрачность", d: "аудитория вправе знать, когда с ней говорит машина" },
-    { n: "IV", t: "Объяснимость", d: "уметь ответить на вопрос «почему модель решила именно так»" },
-    { n: "V", t: "Ответственность", d: "за результат всегда отвечает человек или организация, а не алгоритм" },
-    { n: "VI", t: "Недискриминация", d: "алгоритмы не наследуют и не усиливают предвзятость данных" },
+    "Человек в центре",
+    "Равные возможности",
+    "Прозрачность и объяснимость",
+    "Управляемость",
+    "Ответственность",
+    "Конфиденциальность данных",
   ];
   return (
-    <div className="grid-ink relative h-full overflow-hidden bg-ink text-paper">
-      <Crosshair className="drift-a pointer-events-none absolute -left-10 top-10 h-36 w-36 text-paper/15" />
+    <div className="grid-paper relative h-full overflow-hidden bg-white text-inkc">
       <div className="relative flex h-full flex-col gap-6 px-6 py-8 md:gap-8 md:px-14 lg:px-20">
         <Reveal>
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <Kicker className="text-fog">06 · фундамент</Kicker>
-              <SlideTitle className="mt-3">
-                Кодекс этики <span className="text-signal">в сфере ИИ</span>
-              </SlideTitle>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {["принят в 2021", "инициатива Альянса в сфере ИИ", "подписанты — сотни организаций"].map((c) => (
-                <span
-                  key={c}
-                  className="border border-paper/25 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-paper/80 transition-colors hover:border-signal hover:text-paper"
-                >
-                  {c}
-                </span>
-              ))}
-            </div>
-          </div>
+          <Kicker className="text-brand">06 · фундамент</Kicker>
+          <SlideTitle className="mt-3">
+            От национального кодекса — <span className="text-brand">к отраслевому</span>
+          </SlideTitle>
         </Reveal>
 
-        <Reveal delay={150} className="min-h-0 flex-1">
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {principles.map((p) => (
-              <div
-                key={p.n}
-                className="group border border-paper/15 p-4 transition-all duration-300 hover:-translate-y-1 hover:border-signal hover:bg-paper/5 md:p-5"
-              >
-                <p className="font-display text-xl font-extrabold text-signal md:text-2xl">{p.n}</p>
-                <h3 className="mt-2 font-display text-sm font-bold uppercase tracking-wide md:text-[15px]">
-                  {p.t}
-                </h3>
-                <p className="mt-1.5 text-[13px] leading-snug text-fog transition-colors group-hover:text-paper/85">
-                  {p.d}
+        <div className="grid min-h-0 flex-1 gap-8 lg:grid-cols-[1fr_1.3fr] lg:gap-14">
+          <Reveal delay={150}>
+            <div className="flex h-full flex-col border border-mist bg-tint p-6 md:p-8">
+              <p className="font-mono text-[10px] uppercase tracking-[0.26em] text-steel">документ-основа</p>
+              <h3 className="mt-3 font-display text-[clamp(1.2rem,2.2vw,1.7rem)] font-black uppercase leading-tight text-brand">
+                Кодекс этики в сфере искусственного интеллекта
+              </h3>
+              <div className="mt-4 space-y-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-steel">
+                <p>принят в 2021 году</p>
+                <p>Альянс в сфере ИИ</p>
+                <p>300+ организаций-подписантов</p>
+                <p>университеты · бизнес · государство</p>
+              </div>
+              <div className="mt-auto pt-6">
+                <CheckSq className="h-5 w-5 text-brand" />
+                <p className="mt-2 text-sm font-semibold leading-snug text-inkc">
+                  Университет Лобачевского — подписант и участник Комиссии по реализации Кодекса
                 </p>
               </div>
-            ))}
-          </div>
-        </Reveal>
+            </div>
+          </Reveal>
 
-        <Reveal delay={330}>
-          <div className="group flex items-center justify-between gap-6 bg-signal px-6 py-4 text-ink transition-colors hover:bg-paper md:px-8">
-            <p className="font-display text-[clamp(0.85rem,1.8vw,1.25rem)] font-bold uppercase leading-snug">
-              Кодекс — это рамка. Отрасли нужен прикладной кодекс практики. О нём — дальше.
-            </p>
-            <ArrowGlyph className="h-4 w-14 shrink-0 transition-transform duration-300 group-hover:translate-x-2" />
-          </div>
+          <Reveal delay={300} className="min-h-0">
+            <div className="flex h-full flex-col justify-center border-b-2 border-mist">
+              {principles.map((p, i) => (
+                <div
+                  key={p}
+                  className="group flex items-center gap-5 border-t-2 border-mist py-3 transition-all duration-300 hover:translate-x-2 hover:border-brand"
+                >
+                  <span className="font-display text-xl font-black text-brand/30 transition-colors group-hover:text-brand md:text-2xl">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="font-display text-[15px] font-extrabold uppercase tracking-tight md:text-lg">
+                    {p}
+                  </span>
+                  <span className="ml-auto h-[3px] w-8 bg-sky opacity-0 transition-all duration-300 group-hover:w-16 group-hover:opacity-100" aria-hidden />
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+
+        <Reveal delay={420}>
+          <p className="border-t-2 border-mist pt-3 font-mono text-[10px] uppercase tracking-[0.18em] text-steel">
+            Шесть принципов — общий каркас. Медиа нужна их отраслевая детализация — этим и занимается
+            рабочая группа
+          </p>
         </Reveal>
       </div>
     </div>
@@ -502,10 +462,10 @@ function S06() {
 }
 
 export const FIRST: SlideDef[] = [
-  { id: "s01", label: "Титул", theme: "ink", Comp: S01 },
-  { id: "s02", label: "Почему сейчас", theme: "paper", Comp: S02 },
-  { id: "s03", label: "Кто мы и кого зовём", theme: "paper", Comp: S03 },
-  { id: "s04", label: "Сторона риска", theme: "ink", Comp: S04 },
-  { id: "s05", label: "Сторона прогресса", theme: "paper", Comp: S05 },
-  { id: "s06", label: "Кодекс этики ИИ", theme: "ink", Comp: S06 },
+  { id: "s01", label: "Титул", theme: "blue", Comp: S01 },
+  { id: "s02", label: "Почему сейчас", theme: "white", Comp: S02 },
+  { id: "s03", label: "Команда задачи", theme: "white", Comp: S03 },
+  { id: "s04", label: "Сторона риска", theme: "blue", Comp: S04 },
+  { id: "s05", label: "Сторона прогресса", theme: "white", Comp: S05 },
+  { id: "s06", label: "Кодекс этики", theme: "white", Comp: S06 },
 ];
